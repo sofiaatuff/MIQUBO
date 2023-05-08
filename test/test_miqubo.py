@@ -141,7 +141,7 @@ class TestIntegration(unittest.TestCase):
         """Test integration of demo script."""
         # /path/to/demos/mutual-information-feature-selection/
         project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-        demo_file = os.path.join(project_dir, 'titanic.py')
+        demo_file = os.path.join(project_dir, 'miqubo.py')
 
         output = subprocess.check_output([sys.executable, demo_file])
         output = output.decode('utf-8') # Bytes to str
