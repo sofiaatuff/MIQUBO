@@ -147,7 +147,7 @@ def run_demo(dataset, target):
     # This demo solves the problem for just the highest-scoring features.
 
     # Select 8 features with the top MI ranking found above.
-    keep = 6
+    keep = 8
 
     sorted_scores = sorted(scores.items(), key=lambda pair: pair[1], reverse=True)
     dataset = dataset[[column[0] for column in sorted_scores[0:keep]] + ['Sharpe_Ratio']]
@@ -170,13 +170,11 @@ def run_demo(dataset, target):
 
 
 if __name__ == "__main__":
-    # Read the feature-engineered data into a pandas dataframe
-    # Data obtained from http://biostat.mc.vanderbilt.edu/DataSets
     demo_path = os.path.dirname(os.path.abspath(__file__))
     data_path = os.path.join(demo_path, 'data', '/workspace/MIQUBO/data/formatted_gics.csv')
     dataset = pd.read_csv(data_path)
     run_demo(dataset, 'Sharpe_Ratio')
-    plots_path = os.path.join(demo_path, "plots6.png")
+    plots_path = os.path.join(demo_path, "plots8.png")
     plt.savefig(plots_path, bbox_inches="tight")
     print("Your plots are saved to {}".format(plots_path))
 
