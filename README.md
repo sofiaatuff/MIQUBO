@@ -3,8 +3,6 @@
 ## Abstract
 This research explores the utilization of mutual information and Quadratic Unconstrained Binary Optimization (QUBO) on the D-wave quantum computer to predict the top-performing sectors in the S&P 500. Leveraging mutual information for feature selection, this study identifies the shared information between the Sharpe ratio in the sector and the S&P 500 index. The data consists of daily price data spanning three years from 2020 to 2022. The derived mutual information matrix is transformed into a QUBO problem, which the D-wave quantum computer solves using its quantum annealing algorithm. Experimental outcomes validate the accuracy of the mutual information QUBO method, revealing a significant correlation between the predicted and actual returns.
 
-![Mutual Information with the Sharpe Ratio](figure-1-link)
-
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -28,12 +26,12 @@ Traditionally, QUBO problems find their roots in computer science, primarily foc
 ## Application
 Employing MIQUBO for feature selection on the S&P 500 index seeks to pinpoint the ideal feature set for anticipating the top performance of the 11 GICS sectors. The data originates from Yahoo Finance's daily price data over three years, from 2020 to 2022, and has been feature-engineered to spotlight the top 5 over-performing and underperforming sectors, as determined by their respective Sharpe ratios.
 
-![Minor Embedding of 8 Features](figure-2-link)
+![Minor Embedding of 8 Features](bqm.png)
 
 After identifying the features that possess the highest mutual information with the Sharpe ratio, the top 8 ranking features are embedded onto the system's Quantum Processing Unit (QPU) topology, crucial for solving a BQM problem on a D-Wave system.
 
 ## Results
 Once configured, the D-Wave 2000Q QPU proceeds to solve the BQM for the selected 8 features. The consequent plot showcases the best features out of the chosen set.
 
-![Best Feature Selection from 8 Selected Features](figure-3-link)
+![Best Feature Selection from 8 Selected Features](best_fs.png)
 
